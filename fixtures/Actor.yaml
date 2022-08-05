@@ -1,0 +1,7 @@
+App\Entity\Actor:
+  actor{0..1000}:
+    firstName: '<firstName()>'
+    lastName: '<lastName()>'
+    dateOfBirth: '<date_create()>'
+    startCarreerAt: '<date_create()>'
+    # for number : <number(15,80)>

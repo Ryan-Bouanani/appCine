@@ -1,0 +1,11 @@
+App\Entity\Movie:
+  movie{0..1000}:
+    title : '<word()> <word()>'
+    releaseAt: '<date_create()>'
+    duration: '<numberBetween(60,180)>'
+    description: '<sentence(10,100)>'
+    imageUrl: 'https://picsum.photos/200/300'
+    director: '@director*'
+    categories: '<numberBetween(1,4)>x @category*'
+    actors: '<numberBetween(0,7)>x @actor*'
+    # for number : <number(15,80)>

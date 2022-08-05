@@ -1,0 +1,7 @@
+App\Entity\Director:
+  director{0..1000}:
+    firstName: '<firstName()>'
+    lastName: '<lastName()>'
+    dateOfBirth: <dateTimeBetween('1980-10-10', '2022-10-10')>
+    startCarreerAt: <dateTimeBetween('1980-10-10', '2022-10-10')>
+    # for number : <number(15,80)>

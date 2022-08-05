@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+{% if app.user %}
+<p>Je suis connecté en tant que {{app.user.email }} depuis l'index de home</p>
+{% else %}
+<p>Je ne suis pas connecté</p>
+{% endif %}
+
+<div class="container text-center mt-5">
+    <h1 class="mb-5 mt-5">Listes des films</h1>
+    <div class='w-75 mx-auto mb-5'>
+        <a href="{{ path('app_movie_form')}}" class="btn btn-primary">Ajouter un film</a>
+        <a href="{{ path('app_actor_form')}}" class="btn btn-primary">Ajouter un actor</a>
+        <a href="{{ path('app_director_form')}}" class="btn btn-primary">Ajouter un Director</a>
+        <a href="{{ path('app_user_form')}}" class="btn btn-primary">Ajouter un User</a>
+        <a href="{{ path('app_categorie_form')}}" class="btn btn-primary">Ajouter une Categorie</a>
+    </div>
+    <div class="row">
+        {% for movie in allMovies %}
+        <div class=' col-3 mb-3'>
+            <div class="card me-1 ms-1 h-100">
+                <img src="{{movie.imageUrl}}" class="card-img-top" alt="{{movie.title}}">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title">{{movie.title}}</h5>
+                    {# <p class="card-text">{{movie.categories.label}}</p> #}
+                    <p class="card-text">{{movie.description}}</p>
+                    <a href="{{ path('app_detail', {'id':movie.id})}}" class="btn btn-primary">Voir Detail</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

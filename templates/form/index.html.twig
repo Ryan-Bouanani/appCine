@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FormController!{% endblock %}
+
+{% block body %}
+    {{form_start(form)}}
+        {{form_row(form.title)}}
+        {{form_row(form.description)}}
+        {{form_row(form.pegi)}}
+        {{form_row(form.select)}}
+        <button type="submit">Valider</button>
+    {{form_end(form)}}
+    <a href="{{ path('app_home')}}" class="btn btn-primary">Retour</a>
+{% endblock %}

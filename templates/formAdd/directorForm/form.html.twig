@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DirectorFormController!{% endblock %}
+
+{% block body %}
+    {{form_start(form)}}
+        <div class="form text-center">
+            {{form_row(form.firstName)}}
+            {{form_row(form.lastName)}}
+            {{form_row(form.dateOfBirth)}}
+            {{form_row(form.startCarreerAt)}}
+            <button type="submit">Valider</button>
+        <div>
+    {{form_end(form)}}
+    <a href="{{ path('app_home')}}" class="btn btn-primary mt-3">Retour</a>
+{% endblock %}

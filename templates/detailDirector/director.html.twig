@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+
+<div class="container text-center"> 
+    <h1 class="mb-3">Directeur : {{director.firstName}} {{director.lastName}}</h1>  
+    <p class="mb-3">{{director.firstName}} a debuter sa carrière la {{director.startCarreerAt|date('d/m/Y')}}.</p>  
+    <p class="mb-3">Date de naissance : {{director.dateOfBirth|date('d/m/Y')}}</p>  
+    Movies : 
+    {% for movie in director.movies %}
+        <p>{{movie.title}}</p>
+    {% endfor %}
+</div>
+
+<a href="{{ path('app_home')}}" class="btn btn-primary">Retour</a>
+<a href="{{ path('app_director_form')}}" class="btn btn-primary">Modifier</a>
+
+{% endblock %}

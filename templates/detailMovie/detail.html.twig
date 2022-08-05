@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+
+
+<div class="container text-center"> 
+    <h1 class="mb-3">{{movie.title}}</h1>  
+    <img src="{{movie.imageUrl}}" alt="{{movie.title}}">
+    <p class="mb-3">{{movie.description}}</p> 
+    <p class="mb-3">DUrée totale : {{movie.duration}} minutes.</p>  
+
+    <h2>Categories</h2>
+        {% for categorie in movie.categories %}
+
+            <a href="{{ path('app_detailCategorie', {'idCategorie':categorie.id})}}" class="mb-3">{{categorie.label}}</a>
+
+        {% endfor %}
+
+    <h2>Acteurs :</h2>
+        {% for actor in movie.actors %}
+            {% if actor %}
+                <a href="{{ path('app_detailActor', {'idActor':actor.id})}}" class="mb-3">{{actor.firstName}}</a>        
+            {% endif %}
+            {% else %}
+                <p>Il n'y a pas d'acteurs</p>
+        {% endfor %}
+    <h2>Directeur :</h2>
+         <a href="{{ path('app_detailDirector', {'idDirector':movie.director.id})}}" class="mb-3">{{movie.director.firstName}}</a>        
+
+    {# formulaire ajout commentaire #}
+    {{form_start(form)}}
+    <div class="form text-center">
+        {{form_row(form.note)}}
+         {{form_row(form.comment)}}
+          <button type="submit">Valider</button>
+    </div>
+    {{form_end(form)}}
+
+
+    <h2>Commentaires</h2>
+        {% for review in movie.reviews %}
+            <a href="{{ path('app_detailUser', {'idUser':review.user.id})}}" class="mb-3">{{review.user.email}}</a>        
+            <p class="mb-3">{{review.comment}}</p>        
+        {% endfor %}
+        <p>Notes : {{moyenneNotes}}/5</p>
+</div>
+
+
+<a href="{{ path('app_movie_delete', {'idMovie':movie.id})}}" class="btn btn-danger">Supprimmmer le Film</a>
+<a href="{{ path('app_home')}}" class="btn btn-primary">Retour</a>
+
+{% endblock %}

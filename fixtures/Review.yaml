@@ -1,0 +1,8 @@
+App\Entity\Review:
+  review{0..2000}:
+    note: <numberBetween(0,5)>
+    createdAt: <dateTimeBetween('1980-10-10','2022-10-10')>
+    comment: <sentence(80)>
+    movie: '@movie*'
+    user: '@user*'
+    # for number : <number(15,80)>

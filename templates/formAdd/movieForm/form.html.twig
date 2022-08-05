@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MovieFormController!{% endblock %}
+
+{% block body %}
+    {{form_start(form)}}
+    <div class="form text-center">
+        {{form_row(form.title)}}
+        {{form_row(form.releaseAt)}}
+        {{form_row(form.duration)}}
+        {{form_row(form.description)}}
+        {{form_row(form.imageUrl)}}
+        {{form_row(form.actors)}}
+        {{form_row(form.director)}}
+        {{form_row(form.categories)}}
+        <button type="submit">Valider</button>
+    </div>
+    {{form_end(form)}}
+    <a href="{{ path('app_home')}}" class="btn btn-primary mt-3">Retour</a>
+{% endblock %}

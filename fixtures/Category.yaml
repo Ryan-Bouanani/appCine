@@ -1,0 +1,36 @@
+App\Entity\Category:
+  category0:
+    label: 'Action'
+  category1:
+    label: 'Animation'
+  category2:
+    label: 'Aventure'
+  category3:
+    label: 'Comédie'
+  category4:
+    label: 'Documentaire'
+  category5:
+    label: 'Horreur'
+  category6:
+    label: 'Espionnage'
+  category7:
+    label: 'Fantastique'
+  category8:
+    label: 'Famille'
+  category9:
+    label: 'Guerre'
+  category10:
+    label: 'Historique'
+  category11:
+    label: 'Musical'
+  category12:
+    label: 'Policier'
+  category13:
+    label: 'Romance'
+  category14:
+    label: 'Thriller'
+  category15:
+    label: 'Western'
+
+
+
